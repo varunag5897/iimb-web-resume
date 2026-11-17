@@ -1,0 +1,573 @@
+/* =====================================
+   VARUN AGARWAL - PERSONAL PORTFOLIO
+   HTML + CSS ASSIGNMENT
+===================================== */
+
+/* 1. GLOBAL STYLING */
+
+:root {
+    --ink: #17191d;
+    --paper: #f4f2ed;
+    --muted: #777a80;
+    --line: #d9d7d0;
+    --accent: #b6f36a;
+    --green: #7c9e50;
+    --dark: #22252b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: "DM Sans", sans-serif;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(1120px, 90%);
+    margin: auto;
+}
+
+h1, h2, h3 {
+    font-family: "Space Grotesk", sans-serif;
+    line-height: 1.15;
+    letter-spacing: -1px;
+}
+
+/* 2. NAVIGATION BAR */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(244, 242, 237, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+}
+
+.navbar {
+    width: 90%;
+    min-height: 75px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--green);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 28px;
+}
+
+.nav-links a {
+    font-size: 13px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--green);
+}
+
+/* 3. HERO SECTION */
+
+.hero {
+    min-height: 650px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 65px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.eyebrow {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    font-size: clamp(65px, 9vw, 115px);
+    margin: 25px 0 15px;
+    line-height: 0.95;
+}
+
+.hero h1 span {
+    color: var(--green);
+}
+
+.hero-content h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.hero-content > p:not(.eyebrow) {
+    color: #62656a;
+    max-width: 510px;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--ink);
+    color: white;
+    padding: 13px 22px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: var(--green);
+    color: var(--ink);
+    transform: translateY(-3px);
+}
+
+.text-link {
+    font-size: 13px;
+    font-weight: 700;
+    border-bottom: 1px solid var(--ink);
+}
+
+/* Hero decorative card */
+
+.hero-card {
+    min-height: 430px;
+    position: relative;
+    overflow: hidden;
+    background: var(--dark);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+}
+
+.hero-card::before {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    background: #8c9eff;
+    opacity: 0.15;
+    border-radius: 50%;
+    right: -80px;
+    top: -60px;
+}
+
+.hero-card p {
+    color: var(--accent);
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+.hero-card h2 {
+    font-size: 55px;
+    margin: 25px 0;
+    position: relative;
+}
+
+.hero-card h2 span {
+    color: var(--accent);
+}
+
+.hero-card small {
+    font-size: 10px;
+    color: #bfc2c8;
+    letter-spacing: 2px;
+}
+
+.music-symbol {
+    position: absolute;
+    right: 40px;
+    top: 15px;
+    font-size: 110px;
+    color: var(--accent);
+}
+
+/* 4. SECTION LAYOUT */
+
+.section {
+    padding-top: 110px;
+    padding-bottom: 110px;
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 80px;
+}
+
+.section-title h2 {
+    font-size: 55px;
+    margin-top: 20px;
+}
+
+.section-title h2 span {
+    color: var(--green);
+}
+
+.section-content {
+    max-width: 700px;
+}
+
+.section-content > h3 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.section-content > p {
+    color: #62656a;
+}
+
+/* 5. ABOUT SECTION */
+
+.facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+}
+
+.facts strong {
+    color: var(--green);
+    font-size: 25px;
+}
+
+.facts p {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* 6. EDUCATION SECTION */
+
+.muted {
+    background-color: #eae8e1;
+}
+
+.timeline {
+    border-top: 1px solid #cfcdc5;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 25px;
+    padding: 28px 0;
+    border-bottom: 1px solid #cfcdc5;
+}
+
+.date {
+    color: #78805e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.timeline-item h3,
+.experience-item h3 {
+    font-size: 20px;
+    margin-bottom: 7px;
+}
+
+.timeline-item h4,
+.experience-item h4 {
+    color: var(--green);
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.timeline-item p:last-child,
+.experience-item p:last-child {
+    color: #6b6d70;
+    font-size: 13px;
+}
+
+/* 7. SKILLS SECTION */
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.skill-card {
+    border: 1px solid var(--line);
+    padding: 28px;
+    min-height: 185px;
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    background: #e9eddf;
+    transform: translateY(-5px);
+}
+
+.skill-card span {
+    color: var(--green);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.skill-card h3 {
+    font-size: 22px;
+    margin: 20px 0 10px;
+}
+
+.skill-card p {
+    font-size: 13px;
+    color: #6d7074;
+}
+
+/* 8. EXPERIENCE SECTION */
+
+.experience-list {
+    border-top: 1px solid #cfcdc5;
+}
+
+.experience-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 25px;
+    padding: 28px 0;
+    border-bottom: 1px solid #cfcdc5;
+}
+
+/* 9. ACHIEVEMENTS SECTION */
+
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.achievement-card {
+    background: #eae8e1;
+    padding: 25px;
+    min-height: 185px;
+    transition: 0.3s;
+}
+
+.achievement-card:hover {
+    background: #dce5cd;
+    transform: translateY(-4px);
+}
+
+.achievement-card span {
+    color: var(--green);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.achievement-card h3 {
+    font-size: 25px;
+    margin: 25px 0 10px;
+}
+
+.achievement-card p {
+    color: #6d7074;
+    font-size: 13px;
+}
+
+/* 10. CONTACT SECTION */
+
+.contact-section {
+    background: var(--dark);
+    color: white;
+    padding: 100px 0;
+}
+
+.contact-content {
+    text-align: center;
+}
+
+.contact-content .eyebrow {
+    color: var(--accent);
+}
+
+.contact-content h2 {
+    font-size: clamp(55px, 8vw, 90px);
+    margin: 25px 0;
+}
+
+.contact-content h2 span {
+    color: var(--accent);
+}
+
+.contact-content > p:not(.eyebrow) {
+    max-width: 480px;
+    margin: 0 auto 30px;
+    color: #c2c5cb;
+}
+
+.light-btn {
+    background: var(--accent);
+    color: var(--ink);
+}
+
+.contact-content small {
+    display: block;
+    margin-top: 18px;
+    color: #aeb2bb;
+    font-size: 10px;
+}
+
+/* 11. FOOTER */
+
+.footer {
+    min-height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer p,
+.footer > a:last-child {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.footer > a:last-child {
+    font-weight: 700;
+}
+
+/* 12. RESPONSIVE DESIGN */
+
+@media screen and (max-width: 850px) {
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .hero {
+        gap: 30px;
+    }
+
+    .section {
+        gap: 35px;
+    }
+
+    .hero-card {
+        padding: 30px;
+    }
+
+    .hero-card h2 {
+        font-size: 42px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+
+    .navbar {
+        flex-wrap: wrap;
+        padding: 15px 0;
+    }
+
+    .nav-links {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 12px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 60px;
+    }
+
+    .hero h1 {
+        font-size: 70px;
+    }
+
+    .hero-card {
+        min-height: 330px;
+    }
+
+    .section {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+    .section-title h2 {
+        font-size: 45px;
+    }
+
+    .facts {
+        gap: 10px;
+    }
+
+    .skill-grid,
+    .achievement-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-item,
+    .experience-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .footer {
+        flex-wrap: wrap;
+        padding: 20px 0;
+    }
+}
+
+/* 13. ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
+}
